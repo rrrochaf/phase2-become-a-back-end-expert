@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>PhaseTwo_ServletConfig_ServletContext</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+   </welcome-file-list>
+ 
+ 
+ <!-- ServletContext Parameters for entire Application -->
+ <context-param>
+ 	<param-name>URL</param-name>
+ 	<param-value>https://google.com</param-value>
+ </context-param>
+  <context-param>
+ 	<param-name>Driver</param-name>
+ 	<param-value>com.driver</param-value>
+ </context-param>
+ 
+ 
+ 
+  <servlet>
+    <description></description>
+    <display-name>FirstServlet</display-name>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>com.simplilearn.FirstServlet</servlet-class>
+  	
+  	<!--   Config Parameters for First Servlet-->
+  	<init-param>
+  		<param-name>Message</param-name>
+  		<param-value>Hello from Config Parameter of First Servlet</param-value>
+  	</init-param>
+  	
+  	<init-param>
+  		<param-name>Command</param-name>
+  		<param-value>Select * from Users</param-value>
+  	</init-param>
+  
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SecondServlet</display-name>
+    <servlet-name>SecondServlet</servlet-name>
+    <servlet-class>com.simplilearn.SecondServlet</servlet-class>
+    
+    <!--   Config Parameters for Second Servlet-->
+  	<init-param>
+  		<param-name>Message</param-name>
+  		<param-value>Hello from Config Parameter of Second Servlet</param-value>
+  	</init-param>
+  	
+  	<init-param>
+  		<param-name>Command</param-name>
+  		<param-value>Select * from Persons</param-value>
+  	</init-param>
+  
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondServlet</servlet-name>
+    <url-pattern>/SecondServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
