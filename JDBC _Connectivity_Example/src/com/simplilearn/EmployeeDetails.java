@@ -13,14 +13,15 @@ public class EmployeeDetails {
 
 			// 1. Register the Driver Class
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
+
 			// 2. Create the connection
 			// jdbc:mysql://localhost:port/bd_name?useTimezone=true&serverTimezone=UTC
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sampledb?useTimezone=true&serverTimezone=UTC", "root", "1234");
-			
-			// 3. Create the statement 
+			Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sampledb?useTimezone=true&serverTimezone=UTC", "root", "1234");
+
+			// 3. Create the statement
 			Statement stmt = conn.createStatement();
-			
+
 			// 4. Execute the query
 			ResultSet result = stmt.executeQuery("SELECT * from employee");
 
@@ -33,7 +34,7 @@ public class EmployeeDetails {
 			conn.close();
 
 		} catch (Exception e) {
-			
+
 			System.out.println(e.getMessage());
 
 		}
